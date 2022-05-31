@@ -87,7 +87,7 @@ export default () => {
     // const wsUrl = `${protocol}//localhost:3007/rtmp?key=${streamKey}`;
     const wsUrl = `${protocol}//${window.location.host}?key=${streamKey}`;
     // const wsUrl = 'ws://192.168.0.122:3007/rtmp';
-    // wsRef.current = new WebSocket(wsUrl, 'TESTE');
+    wsRef.current = new WebSocket(wsUrl, 'TESTE');
 
     // wsRef.current = new WebSocket(
     //   `ws//192.168.0.122:3007/rtmp?key=${streamKey}`
