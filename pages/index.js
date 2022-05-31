@@ -90,7 +90,7 @@ export default () => {
     // wsRef.current = new WebSocket(wsUrl, 'TESTE');
 
     wsRef.current = new WebSocket(
-      `${protocol}//192.168.0.122:3007/rtmp?key=${streamKey}`
+      `ws//192.168.0.122:3007/rtmp?key=${streamKey}`
     );
 
     wsRef.current.addEventListener('open', function open() {
