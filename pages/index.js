@@ -90,7 +90,7 @@ export default () => {
     // wsRef.current = new WebSocket(wsUrl, 'TESTE');
 
     wsRef.current = new WebSocket(
-      'ws://3.109.130.68:3008/rtmp?key=rjtb-m0wr-csxx-mgzx-b7u2'
+      'wss://dev.youtube.livestream.goongoonalo.com/rtmp?key=rjtb-m0wr-csxx-mgzx-b7u2'
     );
 
     console.log('wsRef.current', wsRef.current);
