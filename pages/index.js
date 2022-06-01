@@ -85,13 +85,15 @@ export default () => {
 
     const protocol = window.location.protocol.replace('http', 'ws');
     // const wsUrl = `${protocol}//localhost:3007/rtmp?key=${streamKey}`;
-    const wsUrl = `${protocol}//${window.location.host}?key=${streamKey}`;
+    // const wsUrl = `${protocol}//${window.location.host}?key=${streamKey}`;
     // const wsUrl = 'ws://192.168.0.122:3007/rtmp';
-    wsRef.current = new WebSocket(wsUrl, 'TESTE');
+    // wsRef.current = new WebSocket(wsUrl, 'TESTE');
 
-    // wsRef.current = new WebSocket(
-    //   `ws//192.168.0.122:3007/rtmp?key=${streamKey}`
-    // );
+    wsRef.current = new WebSocket(
+      'ws://3.109.130.68:3008/rtmp?key=rjtb-m0wr-csxx-mgzx-b7u2'
+    );
+
+    console.log('wsRef.current', wsRef.current);
 
     wsRef.current.addEventListener('open', function open() {
       setConnected(true);
