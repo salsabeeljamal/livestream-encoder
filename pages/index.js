@@ -128,7 +128,8 @@ export default () => {
     });
 
     mediaRecorderRef.current = new MediaRecorder(inputStreamRef.current, {
-      mimeType: 'video/webm',
+      // mimeType: 'video/webm',
+      mimeType: 'video/mp4',
       videoBitsPerSecond: 3000000,
     });
 
