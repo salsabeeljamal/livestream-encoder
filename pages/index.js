@@ -4,8 +4,9 @@ import styles from '../styles/demo.module.css';
 
 const CAMERA_CONSTRAINTS = {
   audio: true,
-  video: { width: 1280, height: 720 },
+  video: true,
 };
+// video: { width: 1280, height: 720 },
 
 export default () => {
   const [connected, setConnected] = useState(false);
@@ -90,7 +91,7 @@ export default () => {
     // wsRef.current = new WebSocket(wsUrl, 'TESTE');
 
     wsRef.current = new WebSocket(
-      'wss://dev.youtube.livestream.goongoonalo.com/rtmp?key=rjtb-m0wr-csxx-mgzx-b7u2'
+      `wss://dev.youtube.livestream.goongoonalo.com/rtmp?key=${streamKey}`
     );
 
     console.log('wsRef.current', wsRef.current);
@@ -128,8 +129,8 @@ export default () => {
     });
 
     mediaRecorderRef.current = new MediaRecorder(inputStreamRef.current, {
-      // mimeType: 'video/webm',
-      mimeType: 'video/mp4',
+      mimeType: 'video/webm',
+      // mimeType: 'video/mp4',
       videoBitsPerSecond: 3000000,
     });
 
@@ -165,15 +166,6 @@ export default () => {
 
       <div className={styles.info}>
         <h1>Wocket</h1>
-        <p>
-          A demo using modern web technologies to broadcast video from a browser
-          to a server via WebSockets. To learn more, see the <a href="https://github.com/MuxLabs/wocket">Github repo</a> or check out the <a href="https://mux.com/blog/the-state-of-going-live-from-a-browser/">Mux blog post</a> on the topic.
-        </p>
-
-        <p>
-          This service is provided "as is," with no uptime guarantees, support, or any of the usual stuff people pay for.
-        </p>
-
         {cameraEnabled &&
           (streaming ? (
             <div>
