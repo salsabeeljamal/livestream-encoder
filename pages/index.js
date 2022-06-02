@@ -165,7 +165,7 @@ export default () => {
       </Head>
 
       <div className={styles.info}>
-        <h1>Wocket</h1>
+        <h1>Livestream</h1>
         {cameraEnabled &&
           (streaming ? (
             <div>
